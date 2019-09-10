@@ -44,6 +44,7 @@ struct lista{
 		fin = nuevo;
 	}
 	void insertard(int dato, pnodo pos){
+		n++;
 		pnodo nuevo = crearnodo(dato);
 		if(fin == pos){
 			pos->sig = nuevo;
@@ -57,6 +58,7 @@ struct lista{
 		}
 	}
 	void insertara(int dato, pnodo pos){
+		n++;
 		pnodo nuevo = crearnodo(dato);
 		if(ini == pos){
 			pos->ant = nuevo;
@@ -72,6 +74,7 @@ struct lista{
 	int quitari(){
 		int sacado = NULL;
 		if(n){
+			n--;
 			sacado = ini->dato;
 			if(ini == fin){
 				ini = fin = NULL;
@@ -86,6 +89,7 @@ struct lista{
 	int quitarf(){
 		int sacado = NULL;
 		if(n){
+			n--;
 			sacado = fin->dato;
 			if(ini == fin){
 				ini = fin = NULL;
