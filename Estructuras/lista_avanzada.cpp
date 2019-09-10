@@ -69,6 +69,42 @@ struct lista{
 			nuevo->ant->sig = nuevo;
 		}
 	}
+	int quitari(){
+		int sacado = NULL;
+		if(n){
+			sacado = ini->dato;
+			if(ini == fin){
+				ini = fin = NULL;
+				n = 0;
+			} else{
+				ini = ini->sig;
+				ini->ant = NULL;
+			}
+		}
+		return sacado;
+	}
+	int quitarf(){
+		int sacado = NULL;
+		if(n){
+			sacado = fin->dato;
+			if(ini == fin){
+				ini = fin = NULL;
+				n = 0;
+			} else{
+				fin = fin->ant;
+				fin->sig = NULL;
+			}
+		}
+		return sacado;
+	}
+	int consultari(){
+		if(n) return ini->dato;
+		return NULL;
+	}
+	int consultarf(){
+		if(n) return fin->dato;
+		return NULL;
+	}
 	void unir(lista &b, bool inicio = true){
 		if(!b.n) return;
 		n += b.n;
