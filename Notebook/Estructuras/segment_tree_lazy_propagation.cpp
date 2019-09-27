@@ -1,4 +1,4 @@
-typedef struct segtree{
+struct segtree{
   ll *st, *lazy;
   int n;
     segtree(vector<int> datos){

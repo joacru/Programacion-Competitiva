@@ -1,4 +1,3 @@
-
 typedef struct tnodo *pnodo;
 struct tnodo{
 	int dato;

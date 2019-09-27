@@ -1,4 +1,4 @@
-int euclides(int a, int b){
+int euc(int a, int b){
     return (!b)? a : euclides(b, a % b);
 }
 int mcm(int a, int b){
