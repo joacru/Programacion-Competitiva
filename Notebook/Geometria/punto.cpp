@@ -13,4 +13,4 @@ double giro(punto a, punto b, punto c){ //Segmentos AB y BC
 	b.y -= a.y;
 	//Ahora los vectores son b y c
 	return b.x * c.y - c.x * b.y; //Producto cruzado
-}
+};

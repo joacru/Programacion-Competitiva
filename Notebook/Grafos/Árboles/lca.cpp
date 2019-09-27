@@ -24,18 +24,20 @@ struct arbol{
     if(a == raiz || b == raiz) return raiz;
     if(profundidad[a] < profundidad[b]) swap(a, b);
     int diferencia, index, t, valido;
-    while(profunidad[a] != profunidad[b]);
-    index = floor(log2(diferencia));
-    a = lcasparse[a][index];
-  }
-  while(a != b){
-    t = lcasparse[a].size();
-    valido = -1;
-    forn(i, t){
-      if(lcasparse[a][i] == lcasparse[b][i]) break;
-      valido = i;
+    while(profunidad[a] != profunidad[b]){
+      diferencia = profundidad[a] - profunidad[b];
+      index = floor(log2(diferencia));
+      a = lcasparse[a][index];
     }
-    if(valido == -1) return lcasparse[a][0];
-    a = lcasparse[a][valido]; b = lcasparse[b][valido];
+    while(a != b){
+      t = lcasparse[a].size();
+      valido = -1;
+      forn(i, t){
+        if(lcasparse[a][i] == lcasparse[b][i]) break;
+        valido = i;
+      }
+      if(valido == -1) return lcasparse[a][0];
+      a = lcasparse[a][valido]; b = lcasparse[b][valido];
+    }
   }
 }
