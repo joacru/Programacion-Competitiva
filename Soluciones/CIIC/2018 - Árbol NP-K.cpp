@@ -74,7 +74,6 @@ struct rmq{
 		if(bl == br){ //Si están en el mismo bloque
 			return euler[cut(l, r)];
 		}
-		int ret;
 		int lt = (bl + 1) * b - 1;
 		int rt = br * b;
 		bl++; //Para hacer query inclusiva exclusiva (incluye y el segundo ya está excluido)
@@ -87,13 +86,12 @@ struct rmq{
 		if(level[v] < level[u]) u = v; //u mantiene el menor de los dos
 		int k = log2(d); //Para acceder en la sparse
 		d = (1<<k);
-		int w;
 		if(level[sparse[bl][k]] < level[sparse[br - d][k]]){
-			w = sparse[bl][k];
+			v = sparse[bl][k];
 		} else{
-			w = sparse[br - d][k];
+			v = sparse[br - d][k];
 		}
-		if(level[w] < level[u]) u = w;
+		if(level[v] < level[u]) u = v;
 		return euler[u];
 	}
 	int query(int x, int y){
