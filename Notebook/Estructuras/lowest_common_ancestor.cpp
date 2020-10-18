@@ -1,4 +1,4 @@
-int MAXN = 2E5 + 5, LOG = 18;
+int MAXN = 2E5 + 5, LOG = 19;
 bool vis[MAXN];
 vector<int> adj[MAXN], travel;
 struct lcatable{
